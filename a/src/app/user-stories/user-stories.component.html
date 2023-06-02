@@ -1,0 +1,26 @@
+﻿<form [formGroup]="userStoryForm">
+  <div class="form-group">
+    <label for="userStoryTitle">User Story Title</label>
+    <input type="text" formControlName="userStoryTitle" id="userStoryTitle" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userStoryTitle.errors }" />
+    <div *ngIf="submitted && f.userStoryTitle.errors" class="invalid-feedback">
+      <div *ngIf="f.userStoryTitle.errors.required">User Story Title is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="userStoryDescription">User Story Description</label>
+    <textarea formControlName="userStoryDescription" id="userStoryDescription" class="form-control" rows="5" [ngClass]="{ 'is-invalid': submitted && f.userStoryDescription.errors }"></textarea>
+    <div *ngIf="submitted && f.userStoryDescription.errors" class="invalid-feedback">
+      <div *ngIf="f.userStoryDescription.errors.required">User Story Description is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="assignedTeamMember">Assigned Team Member</label>
+    <input type="text" formControlName="assignedTeamMember" id="assignedTeamMember" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.assignedTeamMember.errors }" />
+    <div *ngIf="submitted && f.assignedTeamMember.errors" class="invalid-feedback">
+      <div *ngIf="f.assignedTeamMember.errors.required">Assigned Team Member is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary">Submit</button>
+  </div>
+</form>
